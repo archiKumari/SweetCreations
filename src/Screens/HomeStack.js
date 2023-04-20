@@ -1,14 +1,19 @@
-import {View,Text,Pressable,StyleSheet,StatusBar} from "react-native"
+import {View,Text,StyleSheet,StatusBar} from "react-native";
+import { responsiveHeight,responsiveWidth,responsiveFontSize } from "react-native-responsive-dimensions"
 
-import Colors from "../Constants/Colors"
+import PrimaryButton from "../Components/Buttons/PrimaryButton"
+import {Colors,Fonts} from "../Constants"
 
 const HomeStack = () => {
+    const onButtonPress = () => {
+        console.log("Button Pressed!");
+    }
     return(
         <View style={styles.container}>
             <StatusBar backgroundColor={Colors.primaryLight2}/>
-            <Text style={styles.title}>Select One</Text>
-            <Pressable><Text>Baking</Text></Pressable>
-            <Pressable><Text>Decoration</Text></Pressable>
+            <Text style={styles.title}>Let's start a sweet journey!!</Text>
+            <PrimaryButton buttonText="Explore" onButtonPress={onButtonPress} />
+            {/* <PrimaryButton buttonText="Decoration" onButtonPress={onButtonPress} /> */}
         </View>
     )
 }
@@ -21,9 +26,10 @@ const styles = StyleSheet.create({
         alignItems:"center",
     },
     title: {
-        fontFamily:'AlegreyaSans-Bold',
-        fontSize:34,
+        fontFamily:Fonts.ALEGREYASANS_BOLD,
+        fontSize:responsiveFontSize(4),
         color:Colors.white,
+        marginBottom: 10,
     }
 })
 
