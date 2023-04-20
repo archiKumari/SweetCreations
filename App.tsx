@@ -25,6 +25,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import HomeStack from './src/Screens/HomeStack';
+
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -68,13 +70,7 @@ function App(): JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <View>
-            <Text>Sweet Creations Home Page</Text>
-        </View>
-      </ScrollView>
+      <HomeStack/>
     </SafeAreaView>
   );
 }
